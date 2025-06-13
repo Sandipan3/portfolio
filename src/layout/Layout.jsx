@@ -54,7 +54,7 @@ const Layout = () => {
                 particleCount={10000}
                 particleSpread={100}
                 speed={0.1}
-                particleBaseSize={100}
+                particleBaseSize={500}
                 moveParticlesOnHover={true}
                 alphaParticles={true}
                 disableRotation={false}
