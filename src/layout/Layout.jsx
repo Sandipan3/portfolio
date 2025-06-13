@@ -10,7 +10,7 @@ import GlitchText from "../blocks/TextAnimations/GlitchText/GlitchText";
 
 const Layout = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const isMobile = window.innerWidth <= 640;
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -48,16 +48,29 @@ const Layout = () => {
       ) : (
         <>
           <div className=" inset-0 fixed">
-            <Particles
-              particleColors={["FFFFFF", "#FFFFFA"]}
-              particleCount={20000}
-              particleSpread={100}
-              speed={0.1}
-              particleBaseSize={1000}
-              moveParticlesOnHover={true}
-              alphaParticles={true}
-              disableRotation={false}
-            />
+            {isMobile ? (
+              <Particles
+                particleColors={["FFFFFF", "#FFFFFA"]}
+                particleCount={10000}
+                particleSpread={100}
+                speed={0.1}
+                particleBaseSize={100}
+                moveParticlesOnHover={true}
+                alphaParticles={true}
+                disableRotation={false}
+              />
+            ) : (
+              <Particles
+                particleColors={["FFFFFF", "#FFFFFA"]}
+                particleCount={20000}
+                particleSpread={100}
+                speed={0.1}
+                particleBaseSize={1000}
+                moveParticlesOnHover={true}
+                alphaParticles={true}
+                disableRotation={false}
+              />
+            )}
           </div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
