@@ -20,14 +20,14 @@ const Layout = () => {
   }, []);
 
   return (
-    <section className=" flex flex-col justify-between relative ">
+    <section className="flex flex-col justify-between relative h-screen ">
       {isLoading ? (
         <>
           <GlitchText
             speed={1.5}
             enableShadows={true}
             enableOnHover={false}
-            className=" flex items-center justify-center"
+            className="flex items-center justify-center h-full"
           >
             Sandipan Jha
           </GlitchText>
@@ -47,7 +47,7 @@ const Layout = () => {
         </>
       ) : (
         <>
-          <div className="absolute inset-0 ">
+          <div className="absolute inset-0">
             <Particles
               particleColors={["FFFFFF", "#FFFFFA"]}
               particleCount={20000}
@@ -63,20 +63,18 @@ const Layout = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="flex flex-col justify-between "
+            className="flex flex-col justify-between h-full"
           >
             <div className="flex flex-col justify-center items-center gap-4">
               <Navbar />
               <Header />
             </div>
-            <main className="flex flex-col justify-center items-center gap-4 ">
+            <main className="flex flex-col justify-center items-center gap-4">
               <AnimatePresence mode="wait">
                 <Outlet />
               </AnimatePresence>
             </main>
-            <div>
-              <Footer />
-            </div>
+            <Footer />
           </motion.div>
         </>
       )}

@@ -29,12 +29,12 @@ export const Contact = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex justify-center items-center w-full z-10 "
+      className="flex justify-center items-center w-full min-h-screen p-4 z-10"
     >
       <motion.form
         ref={form}
         onSubmit={sendEmail}
-        className="w-full max-w-lg p-8 border border-gray-200 rounded-2xl"
+        className="w-full max-w-lg p-8 border border-gray-200 rounded-2xl bg-white shadow-md"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -113,7 +113,7 @@ export const Contact = () => {
               text="Submit"
               disabled={false}
               speed={3}
-              className="text-sm sm:text-base  flex justify-center items-center"
+              className="text-sm sm:text-base flex justify-center items-center"
             />
           </motion.button>
         </div>
