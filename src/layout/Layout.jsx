@@ -27,7 +27,7 @@ const Layout = () => {
             speed={1.5}
             enableShadows={true}
             enableOnHover={false}
-            className="min-h-screen flex items-center justify-center"
+            className=" flex items-center justify-center"
           >
             Sandipan Jha
           </GlitchText>
