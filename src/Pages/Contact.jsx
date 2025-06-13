@@ -13,17 +13,19 @@ export const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
-      () => {
-        toast.success("Email sent successfully.");
-      },
-      (error) => {
-        toast.error("Unable to send email!");
-      }
-    );
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
