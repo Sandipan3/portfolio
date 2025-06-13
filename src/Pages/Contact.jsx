@@ -19,9 +19,11 @@ export const Contact = () => {
       })
       .then(
         () => {
+          toast.success("Mail was sent successfully");
           console.log("SUCCESS!");
         },
         (error) => {
+          toast.error("Unable to send mail!");
           console.log("FAILED...", error.text);
         }
       );
@@ -31,12 +33,12 @@ export const Contact = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex justify-center items-center w-full min-h-screen p-4 z-10"
+      className="flex justify-center items-center w-full min-h-screen p-4 "
     >
       <motion.form
         ref={form}
         onSubmit={sendEmail}
-        className="w-full max-w-lg p-8 border border-gray-200 rounded-2xl bg-white shadow-md"
+        className="w-full max-w-lg p-8 border border-gray-200 rounded-2xl bg-white shadow-md z-10"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}

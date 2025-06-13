@@ -558,7 +558,7 @@ export default function CircularGallery({
   }, [items, bend, textColor, borderRadius, font]);
   return (
     <div
-      className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing m-0 p-0"
+      className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing m-0 p-0 bg-none"
       ref={containerRef}
     />
   );

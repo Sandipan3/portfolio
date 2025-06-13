@@ -47,7 +47,7 @@ const Layout = () => {
         </>
       ) : (
         <>
-          <div className="absolute inset-0">
+          <div className=" inset-0 fixed">
             <Particles
               particleColors={["FFFFFF", "#FFFFFA"]}
               particleCount={20000}
