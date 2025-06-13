@@ -21,6 +21,8 @@ import {
   Texture,
 } from "ogl";
 
+const isMobile = window.innerWidth <= 640;
+
 function debounce(func, wait) {
   let timeout;
   return function (...args) {
@@ -444,7 +446,9 @@ class App {
   onTouchMove(e) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const distance = (this.start - x) * 0.05;
+    const distance = isMobile
+      ? (this.start - x) * 0.1
+      : (this.start - x) * 0.05;
     this.scroll.target = this.scroll.position + distance;
   }
   onTouchUp() {
